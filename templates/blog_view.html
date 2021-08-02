@@ -1,0 +1,22 @@
+{% extends "base.html"%}
+
+
+{% block head %}
+    <title>Blog</title>
+{% endblock %}
+
+{% block body %}
+<br>
+
+{% for blog in blogs %}
+<style>
+    h4,p{margin: 1cm;}
+</style>
+<br>
+    <h4>Title:</h4><p>{{ blog["title"]}}</p>
+    <br>
+    <h4>Content:</h4><p>{{ blog["content"] }}</p>
+<hr>    
+{% endfor %}   
+<a style="margin: 1cm;" type="btn" class="btn btn-primary" href="/general">General</a>
+{% endblock %}

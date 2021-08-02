@@ -1,0 +1,26 @@
+{% extends "base.html"%}
+
+
+{% block head %}
+    <title>blog</title>
+{% endblock %}
+
+{% block body %}
+<style>
+    form{margin: 2cm;}
+</style>
+<form action="/contact" method="POST">
+    <label for="name">Name:</label>
+    <input class="form-control" type="text" name='name' id='author' placeholder="Enter_Name"aria-label="entername">
+    <br> 
+    <label for="name">Email</label>
+    <input class="form-control" type="text" name='email' id='email' placeholder="Enter-mail"aria-label="entermail">
+    <br> 
+    <label for="content">Content:</label>
+    <textarea class="form-control" name="content" id="content" placeholder="Enter_Content" rows="3"></textarea>
+
+    <input style="margin: 1cm;" type='submit' value="Send" class="btn btn-primary">
+</form>
+{% endblock %}
+
+
