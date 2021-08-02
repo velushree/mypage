@@ -1,11 +1,10 @@
 from flask import Flask,render_template,request,redirect
 from pymongo import MongoClient
 import ssl
-
-#
+import os
 app = Flask(__name__)
 
-client=MongoClient("mongodb+srv://m001-student:m001-mongodb-basics@sandbox.br4vj.mongodb.net/mydatabase?retryWrites=true&w=majority",ssl_cert_reqs=ssl.CERT_NONE)
+client=MongoClient(os.getenv("DATABASE_URL"))
 db=client["mydatabase"]
 collection=db["blog"]
 collection1=db["contact"]
